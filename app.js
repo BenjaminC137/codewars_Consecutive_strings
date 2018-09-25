@@ -1,6 +1,12 @@
 
 
-longestConsec(["zone", "abigail", "theta", "form", "libe", "zas"], 2)
+longestConsec(["zone", "abigail", "theta", "form", "libe", "zas"], 2);
+
+
+longestConsec(["ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh"], 1);
+
+longestConsec(["itvayloxrp","wkppqsztdkmvcuwvereiupccauycnjutlv","vweqilsfytihvrzlaodfixoyxvyuyvgpck"], 2);
+
 
 
 
@@ -8,17 +14,31 @@ function longestConsec(strarr, k) {
 	var n = strarr.length;
 	if (n = 0 || k > n || k <= 0) {return ""}
 
+	if(k>1){
 	var slicedArray = strarr.slice(0, n-k+1);
-	
+	console.log(slicedArray);
+	}
+	else{
+		var slicedArray = strarr;
+	}
 	slicedArray.sort(function(a, b){
 		return b.length - a.length
 	});
-//	console.log(slicedArray);
-	var longestString = slicedArray[0];
-		console.log(longestString);
-
+	console.log(slicedArray);
 	
-	return slicedArray;
+	var longestString = slicedArray[0];
+	console.log(longestString);
+
+	var finalString = longestString;
+	longestStringIndex = strarr.indexOf(longestString);
+	console.log(longestStringIndex);
+	
+	for(i = longestStringIndex; i < k; i++){
+	finalString += strarr[i+1];	
+	}
+	
+	return finalString;
+	
 }
 
 
