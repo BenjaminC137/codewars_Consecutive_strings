@@ -9,6 +9,9 @@ longestConsec(["itvayloxrp","wkppqsztdkmvcuwvereiupccauycnjutlv","vweqilsfytihvr
 
 
 
+longestConsec(["zone", "abigail", "theta", "form", "libe", "zas"], -2);
+
+
 
 function longestConsec(strarr, k) {
 	var n = strarr.length;
@@ -28,6 +31,10 @@ function longestConsec(strarr, k) {
 	
 	var longestString = slicedArray[0];
 	console.log(longestString);
+	
+	if(k == 1){
+		return longestString;
+	}
 
 	var finalString = longestString;
 	longestStringIndex = strarr.indexOf(longestString);
